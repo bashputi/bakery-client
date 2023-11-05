@@ -1,6 +1,8 @@
 // import Banner from "../../components/header/Banner";
 
-import Footer from "../../components/Footer";
+import TopSection from "../../components/TopSection";
+
+// import Footer from "../../components/Footer";
 
 
 
@@ -8,7 +10,8 @@ const Home = () => {
     return (
         <div>
       {/* <Banner></Banner> */}
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
+      <TopSection></TopSection>
         </div>
     );
 };
