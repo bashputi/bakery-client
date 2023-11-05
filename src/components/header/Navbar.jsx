@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../route/AuthProvider";
+import MyProfile from "../MyProfile";
 
 const Navbar = () => {
     const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
@@ -64,20 +65,7 @@ console.log(user)
             {
         user?.email ? <>
             <button onClick={logOut} className="btn btn-ghost text-xl font-semibold">LogOut</button>
-            <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                <div className="w-10 rounded-full">
-                <img src={user.photoURL} />
-                </div>
-            </label>
-            <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                <div className="mb-4 text-center font-semibold text-xl text-green-600">{user.displayName}'s Account</div>
-                <li><button className="btn btn-ghost "><NavLink to="/myaddeditems">My Added Food Items</NavLink></button></li>
-                <li><button className="btn btn-ghost"><NavLink to="/additems">Add a food item</NavLink></button></li>
-                <li><button className="btn btn-ghost"><NavLink to="/ordereditems">My ordered items</NavLink></button></li>
-
-            </ul>
-            </div>
+            <MyProfile></MyProfile>
                 </>
         : <li className="text-xl font-semibold"><NavLink to="/login" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF444A] underline" : "" }>Login</NavLink></li>
         
