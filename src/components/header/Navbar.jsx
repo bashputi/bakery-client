@@ -24,24 +24,7 @@ console.log(user)
     <li className="text-xl font-semibold"><NavLink to="/" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF444A] underline" : "" }>Home</NavLink></li>
     <li className="text-xl font-semibold"><NavLink to="/allItems" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF444A] underline" : "" }>All Items</NavLink></li>
     <li className="text-xl font-semibold"><NavLink to="/blog" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF444A] underline" : "" }>Blog</NavLink></li>
-    {
-        user?.email ? <>
-            <li onClick={logOut} className="text-xl font-semibold"><NavLink to="/" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF444A] underline" : "" }>LogOut</NavLink></li>
-            <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                <div className="w-10 rounded-full">
-                <img src={user.photoURL} />
-                </div>
-            </label>
-            <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                
-                <li><a>Settings</a></li>
-
-            </ul>
-            </div>
-                </>
-        : <li className="text-xl font-semibold"><NavLink to="/login" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF444A] underline" : "" }>Login</NavLink></li>
-    }
+    
     </>
     return (
         <div>
@@ -78,7 +61,27 @@ console.log(user)
               </ul>
             </div>
             <div className="navbar-end">
-         
+            {
+        user?.email ? <>
+            <button onClick={logOut} className="btn btn-ghost text-xl font-semibold">LogOut</button>
+            <div className="dropdown dropdown-end">
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full">
+                <img src={user.photoURL} />
+                </div>
+            </label>
+            <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                <div className="mb-4 text-center font-semibold text-xl text-green-600">{user.displayName}'s Account</div>
+                <li><button className="btn btn-ghost "><NavLink to="/myaddeditems">My Added Food Items</NavLink></button></li>
+                <li><button className="btn btn-ghost"><NavLink to="/additems">Add a food item</NavLink></button></li>
+                <li><button className="btn btn-ghost"><NavLink to="/ordereditems">My ordered items</NavLink></button></li>
+
+            </ul>
+            </div>
+                </>
+        : <li className="text-xl font-semibold"><NavLink to="/login" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF444A] underline" : "" }>Login</NavLink></li>
+        
+    }
                  
         </div>
     </div>
