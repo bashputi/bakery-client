@@ -5,6 +5,7 @@ import {
   AccordionBody,
 } from "@material-tailwind/react";
 import React from "react";
+import { Helmet } from "react-helmet";
 
 const Blog = () => {
     const [open, setOpen] = React.useState(1);
@@ -12,6 +13,11 @@ const Blog = () => {
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
     return (
         <div className="container mx-auto">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>SL Bakery | Blog </title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
           <div className="text-center mt-12 font-bold text-2xl lg:text-5xl">
             Queston & Answer
           </div>

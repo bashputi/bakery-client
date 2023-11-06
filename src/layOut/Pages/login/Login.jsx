@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../../route/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import { ImGoogle } from "react-icons/im";
+import { Helmet } from "react-helmet";
 
 
 const Login = () => {
@@ -47,6 +48,11 @@ const Login = () => {
 
   return (
     <div>
+        <Helmet>
+                <meta charSet="utf-8" />
+                <title>SL Bakery | Login </title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
       <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col">
       <div className="text-center lg:text-left">

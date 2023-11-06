@@ -2,12 +2,15 @@ import { useContext } from "react";
 import { AuthContext } from "../../../route/AuthProvider";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Spinner } from "@material-tailwind/react";
+import { Helmet } from "react-helmet";
 
 
 const Order = () => {
   const service = useLoaderData();
   const {name, image, price} = service ;
-const {user} = useContext(AuthContext);
+const {user,loading} = useContext(AuthContext);
+if(loading) return <div className="flex justify-center my-10"><Spinner className="h-8 w-8" /></div> ;
 
 const handleOrder = e => {
   e.preventDefault();
@@ -53,6 +56,11 @@ const handleOrder = e => {
 
     return (
         <div >
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>SL Bakery | Purchase page </title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
           <div className="mt-10 text-center font-bold text-4xl">Buy Now</div>
             <div className="hero min-h-screen">
   <div className="hero-content ">
@@ -82,13 +90,13 @@ const handleOrder = e => {
           <label className="label">
             <span className="label-text">Buyer Name</span>
           </label>
-          <input type="text" defaultValue={user?.displayName} name="name" placeholder="Buyer name" className="input input-bordered" required />
+          <input type="text" defaultValue={user?.displayName} name="name" placeholder="Buyer name" className="input input-bordered" required readOnly={true}/>
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Buyer Email</span>
           </label>
-          <input type="Email" defaultValue={user?.email} name="email" placeholder="Buyer email" className="input input-bordered" required />
+          <input type="Email" defaultValue={user?.email} name="email" placeholder="Buyer email" className="input input-bordered" required readOnly={true}/>
         </div>
         <div className="form-control">
           <label className="label">

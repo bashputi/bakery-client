@@ -57,7 +57,7 @@ const Banner = () => {
                   You’ll find dozens of muffin recipes here, from healthy and wholesome options like morning glory muffins and applesauce muffins.
                 </Typography>
                 <div className="flex gap-2">
-                  <Button size="lg" color="white"> <NavLink to="/allItems">All Items</NavLink></Button>
+                  <Button size="lg" color="white"> <NavLink to="/allfoods">All Items</NavLink></Button>
                  
                 </div>
               </div>

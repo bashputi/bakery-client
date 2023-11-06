@@ -20,9 +20,9 @@ const MyProfile = () => {
                 <img src={user.photoURL} />
                 </div>
                 <div className="my-4 text-center font-semibold text-xl text-green-600">{user.displayName}'s Account</div>
-                <li><Button variant="outlined"><NavLink to="/myaddeditems">My Added Food Items</NavLink></Button></li>
-                <li className="my-3"><Button variant="outlined"><NavLink to="/additems">Add a food item</NavLink></Button></li>
-                <li><Button variant="outlined"><NavLink to="/ordereditems">My ordered items</NavLink></Button></li>
+                <li><Button ><NavLink to="/addeditems">My Added Food Items</NavLink></Button></li>
+                <li className="my-3"><Button ><NavLink to="/addfood">Add a food item</NavLink></Button></li>
+                <li><Button ><NavLink to="/myorder">My ordered items</NavLink></Button></li>
 
             </ul>
             </div>
