@@ -3,16 +3,58 @@ import { AuthContext } from "../../../route/AuthProvider";
 import { useContext, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const MyOrder = () => {
+    // const params = useParams();
+    // console.log(params)
     const loadedMyOrder = useLoaderData();
+    console.log(loadedMyOrder)
     const [updateUser, setUpdateUser] = useState(loadedMyOrder);
     const {user} = useContext(AuthContext);
+
+    // useEffect(() => {
+    //     const filterCart = loadedMyOrder.filter((item) => item.email === params.email);
+    //     setUpdateUser(filterCart);
+    // },[params.email, loadedMyOrder])
+
     const {loading} = useContext(AuthContext);
     if(loading) return <div className="flex justify-center my-10"><Spinner className="h-8 w-8" /></div> ;
 
+   const handleDelete = (id) => {
+console.log(id);
+Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!"
+  }).then((result) => {
+    console.log(result)
+    if (result.isConfirmed) {
+        fetch(`http://localhost:5000/order/${id}`,{
+            method: 'DELETE'
+        })
+        .then(res => res.json())
+        .then(data => {
+           if(data.deletedCount > 0){
+            Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+              });
+              const remaining = updateUser.filter((item) => item._id !== id);
+              setUpdateUser(remaining)
+           }
+        })
+
    
+    }
+  });
+   };
 
 
     return (
@@ -37,7 +79,7 @@ const MyOrder = () => {
                           <p>Price: $ {user?.Price}</p>
                           <p>Date: {user?.Date}</p>
                           <div className="card-actions justify-end">
-                            <button className="btn btn-primary">delete</button>
+                            <button onClick={() => handleDelete(user?._id)} className="btn btn-primary">delete</button>
                           </div>
                         </div>
                       </div>

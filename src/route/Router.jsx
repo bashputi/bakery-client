@@ -51,7 +51,7 @@ const myRouter = createBrowserRouter([
            loader: ({params}) => fetch(`http://localhost:5000/bakery/${params.id}`)
         },
         {
-          path: '/myorder/',
+          path: '/myorder',
           element: <MyOrder></MyOrder>,
           loader: () => fetch('http://localhost:5000/order')
         },
