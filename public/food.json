@@ -6,7 +6,7 @@
       "category": "Cakes",
       "price": 2.99,
       "quantity": 12,
-      "made-by": "Elisa Pietrantonio",
+      "made": "Elisa Pietrantonio",
       "origin": "Australia",
       "description": " Two delicious layers of vanilla cake and a Clinkers-studded cheesecake centre are covered in a fluffy pink buttercream and decorated with even more Clinkers."
     },
@@ -16,8 +16,8 @@
       "image": "https://i.ibb.co/ZhK0n27/Easy-Chocolate-Croissant-IG-4.jpg",
       "category": "Croissant",
       "price": 3.49,
-      "quantity": 6,
-      "made-by": "Elisa Pietrantonio",
+      "quantity": 0,
+      "made": "Elisa Pietrantonio",
       "origin": "United States",
       "description": "This easy chocolate croissant recipe is a simplified version that uses puff pastry to make this delicious pastry in less than 30 minutes! They make a great breakfast treat and they are perfect for Sunday brunch!"
     },
@@ -28,7 +28,7 @@
       "category": "Bread",
       "price": 4.99,
       "quantity": 1,
-      "made-by": "Andrew Janjigian",
+      "made": "Andrew Janjigian",
       "origin": "Fr",
       "description": "At some point in every amateur bread baker’s life comes the desire to tackle the baguette, and for good reason: Great baguettes are hard to come by outside of France."
     },
@@ -39,7 +39,7 @@
       "category": "Macaron",
       "price": 2.49,
       "quantity": 8,
-      "made-by": "Nik Pugmire",
+      "made": "Nik Pugmire",
       "origin": "France",
       "description": "Macarons are known for being deliciously delicate sandwich cookies that come in various colors and flavors, but they also have a notorious reputation for being tricky to create at home."
     },
@@ -50,7 +50,7 @@
       "category": "Cakes",
       "price": 5.99,
       "quantity": 1,
-      "made-by": "Emily Jonzen",
+      "made": "Emily Jonzen",
       "origin": "London",
       "description": "Chocolate sponges are drizzled with boozy coffee syrup then layered up with an indulgent espresso mascarpone icing. This showstopper is luscious and rich."
     },
@@ -61,7 +61,7 @@
       "category": "Croissant",
       "price": 24.99,
       "quantity": 1,
-      "made-by": "Pietrantonio",
+      "made": "Pietrantonio",
       "origin": "London",
       "description": "Take a delicious classic to the next level with a tender, flaky croissant instead of plain white or wheat bread."
     },
@@ -72,7 +72,7 @@
       "category": "Bread",
       "price": 15.99,
       "quantity": 1,
-      "made-by": "Éclair Dreas",
+      "made": "Éclair Dreas",
       "origin": "Italy",
       "description": "There's nothing better than homemade bread, fresh out of the oven."
     },
@@ -83,7 +83,7 @@
       "category": "Macaron",
       "price": 3.99,
       "quantity": 4,
-      "made-by": "John Kanell",
+      "made": "John Kanell",
       "origin": "France",
       "description": "These French macarons make a very special treat to give your friends and family. They also look pretty on a plate for guests to indulge in when they come over."
     },

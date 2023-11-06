@@ -34,6 +34,7 @@ const AllFoodsCard = ({ bakery }) => {
           <CardFooter className="flex items-center justify-between">
              <div><span className="font-bold text-xl text-amber-700">${price}</span> / <span>{quantity} pcs</span></div>
             <Typography className="font-normal">
+              
            <Link to={`details/${_id}`}>
            <Button variant="text" className="flex items-center gap-2">
         Details{" "}
@@ -53,6 +54,7 @@ const AllFoodsCard = ({ bakery }) => {
         </svg>
       </Button>
            </Link>
+
             </Typography>
           </CardFooter>
         </Card>
