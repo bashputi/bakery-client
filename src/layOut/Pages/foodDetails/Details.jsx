@@ -1,5 +1,5 @@
 import { Button } from "@material-tailwind/react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 
 const Details = () => {
@@ -13,7 +13,7 @@ const Details = () => {
     <p className="mb-12 md:mb-20 text-center text-gray-600 ">Product Details</p>
           <div className="card h-[60vh] grid md:grid-cols-2 card-side bg-base-900">
             <div>
-            <figure><img className="" src={image} alt="Movie"/></figure>
+            <figure><img className="h-[60vh]" src={image} alt="Movie"/></figure>
             </div>
             <div className="card-body md:-mt-8">
                 <h2 className="card-title text-3xl">{name}</h2>
@@ -23,7 +23,7 @@ const Details = () => {
                 <p className="">{description}</p>
                 <div><span className="font-bold text-xl text-amber-700">${price}</span> / <span>{quantity} pcs</span></div>
                 <div className="card-actions justify-end">
-                <Button color="green"> Order Now</Button>
+               <Link to="/order"> <Button color="green"> Order Now</Button></Link>
                 </div>
   </div>
 </div>

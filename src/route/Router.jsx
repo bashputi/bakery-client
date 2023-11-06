@@ -7,6 +7,8 @@ import Login from "../layOut/Pages/login/Login";
 import Blog from "../layOut/Pages/Blog";
 import AllFoods from "../layOut/Pages/allItem/AllFoods";
 import Details from "../layOut/Pages/foodDetails/Details";
+import Order from "../layOut/Pages/foodDetails/Order";
+import PrivateRoute from "../route/PrivateRoute";
 
 const myRouter = createBrowserRouter([
     {
@@ -39,6 +41,10 @@ const myRouter = createBrowserRouter([
           path:'/allfoods/details/:id',
           element: <Details></Details>,
           loader: ({params}) => fetch(`http://localhost:5000/bakery/${params.id}`)
+        },
+        {
+          path: '/order',
+          element: <PrivateRoute><Order></Order></PrivateRoute>
         }
       ]
     },
