@@ -23,7 +23,7 @@ console.log(user)
 
     const navLink = <>
     <li className="text-xl font-semibold"><NavLink to="/" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF444A] underline" : "" }>Home</NavLink></li>
-    <li className="text-xl font-semibold"><NavLink to="/allItems" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF444A] underline" : "" }>All Items</NavLink></li>
+    <li className="text-xl font-semibold"><NavLink to="/allfoods" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF444A] underline" : "" }>All Items</NavLink></li>
     <li className="text-xl font-semibold"><NavLink to="/blog" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF444A] underline" : "" }>Blog</NavLink></li>
     
     </>
@@ -64,7 +64,7 @@ console.log(user)
             <div className="navbar-end">
             {
         user?.email ? <>
-            <button onClick={logOut} className="btn btn-ghost text-xl font-semibold">LogOut</button>
+            <button onClick={logOut} className="btn btn-ghost lg:text-xl font-semibold">LogOut</button>
             <MyProfile></MyProfile>
                 </>
         : <li className="text-xl font-semibold"><NavLink to="/login" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF444A] underline" : "" }>Login</NavLink></li>

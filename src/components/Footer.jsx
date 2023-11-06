@@ -17,12 +17,12 @@ const LINKS = [
 
 const Footer = () => {
     return (
-        <footer className="relative mt-10 pt-5 bg-gray-400 w-full">
+        <footer className="relative mt-10 pt-5 bg-gray-200 w-full">
           <div className="mx-auto w-full max-w-7xl px-8">
             <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
               <Typography variant="h5" className="mb-6">
               <div className="flex ml-2 font-serif">
-                       <span className="lg:text-2xl font-bold mr-1 lg:mr-2">SL</span> <span className="text-amber-600 font-bold lg:text-2xl">Bakery</span>
+                       <span className="lg:text-2xl font-bold mr-1  lg:mr-2">SL</span> <span className="text-amber-700 font-bold lg:text-2xl">Bakery</span>
                     </div>
               </Typography>
               <div className="grid grid-cols-3 justify-between gap-4">
