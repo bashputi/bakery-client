@@ -43,8 +43,9 @@ const myRouter = createBrowserRouter([
           loader: ({params}) => fetch(`http://localhost:5000/bakery/${params.id}`)
         },
         {
-          path: '/order',
-          element: <PrivateRoute><Order></Order></PrivateRoute>
+          path: 'order/:id',
+          element: <PrivateRoute><Order></Order></PrivateRoute>,
+           loader: ({params}) => fetch(`http://localhost:5000/bakery/${params.id}`)
         }
       ]
     },

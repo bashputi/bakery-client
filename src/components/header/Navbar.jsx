@@ -19,7 +19,6 @@ const Navbar = () => {
     },[theme]); 
 
 const { user, logOut } = useContext(AuthContext);
-console.log(user)
 
     const navLink = <>
     <li className="text-xl font-semibold"><NavLink to="/" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FF444A] underline" : "" }>Home</NavLink></li>

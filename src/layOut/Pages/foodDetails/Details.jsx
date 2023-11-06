@@ -23,7 +23,7 @@ const Details = () => {
                 <p className="">{description}</p>
                 <div><span className="font-bold text-xl text-amber-700">${price}</span> / <span>{quantity} pcs</span></div>
                 <div className="card-actions justify-end">
-               <Link to="/order"> <Button color="green"> Order Now</Button></Link>
+               <Link to={`/order/${_id}`}> <Button color="green"> Order Now</Button></Link>
                 </div>
   </div>
 </div>
