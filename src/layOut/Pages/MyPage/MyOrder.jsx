@@ -58,7 +58,7 @@ Swal.fire({
 
 
     return (
-        <div className="container md:mx-auto">
+        <div className="container mx-auto">
               <Helmet>
                 <meta charSet="utf-8" />
                 <title>SL Bakery | Client's order </title>
