@@ -1,6 +1,6 @@
 import { Carousel, Typography, Button } from "@material-tailwind/react";
 import { NavLink } from "react-router-dom";
-
+import { motion } from "framer-motion";
 
 const Banner = () => {
     return (
@@ -28,7 +28,7 @@ const Banner = () => {
                  You’ll find dozens of muffin recipes here, from healthy and wholesome options like morning glory muffins and applesauce muffins.
                 </Typography>
                 <div className="flex gap-2">
-                <Button size="lg" color="white"> <NavLink to="/allItems">All Items</NavLink></Button>
+                <motion.button whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }} className="btn btn-active btn-accent"> <NavLink to="/allfoods">All Items</NavLink></motion.button>
                  
                 </div>
               </div>
@@ -57,7 +57,7 @@ const Banner = () => {
                   You’ll find dozens of muffin recipes here, from healthy and wholesome options like morning glory muffins and applesauce muffins.
                 </Typography>
                 <div className="flex gap-2">
-                  <Button size="lg" color="white"> <NavLink to="/allfoods">All Items</NavLink></Button>
+                  <motion.button whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }} className="btn btn-active btn-accent"> <NavLink to="/allfoods">All Items</NavLink></motion.button>
                  
                 </div>
               </div>
@@ -86,7 +86,7 @@ const Banner = () => {
                  You’ll find dozens of muffin recipes here, from healthy and wholesome options like morning glory muffins and applesauce muffins.
                 </Typography>
                 <div className="flex gap-2">
-                <Button size="lg" color="white"> <NavLink to="/allItems">All Items</NavLink></Button>
+                <motion.button whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }} className="btn btn-active btn-accent"> <NavLink to="/allfoods">All Items</NavLink></motion.button>
                  
                 </div>
               </div>

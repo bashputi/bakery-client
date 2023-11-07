@@ -1,8 +1,10 @@
-import { Button, Spinner } from "@material-tailwind/react";
+import {  Spinner } from "@material-tailwind/react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../route/AuthProvider";
 import { useContext } from "react";
+import { motion } from "framer-motion";
+
 
 const TopSection = () => {
     const {loading} = useContext(AuthContext);
@@ -14,7 +16,7 @@ const TopSection = () => {
 
             </div>
             <div className="flex justify-center">
-            <Button color="amber"><NavLink to="/allfoods" className="flex gap-3 text-lg  lg:py-4"><p>See All</p> <AiOutlineArrowRight  className="mt-1.5"/></NavLink></Button>
+            <motion.button whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }} className="btn btn-outline btn-warning"><NavLink to="/allfoods" className="flex gap-3 text-lg  "><p>See All</p> <AiOutlineArrowRight  className="mt-1.5"/></NavLink></motion.button>
             </div>
         </div>
     );

@@ -57,11 +57,13 @@ const AllFoods = () => {
                   bakerys.length &&  bakerys.map((bakery)=> <AllFoodsCard key={bakery._id} bakery={bakery} bakerys={bakerys} setBakerys={setBakerys}></AllFoodsCard>)
                 }
             </div>
-            <div className="join">
+           <div className="flex justify-center mt-12">
+           <div className="join">
             <button className="join-item btn">«</button>
             <button className="join-item btn">Page 22</button>
             <button className="join-item btn">»</button>
             </div>
+           </div>
         </div>
     );
 };

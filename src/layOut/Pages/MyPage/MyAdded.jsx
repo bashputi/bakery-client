@@ -1,6 +1,6 @@
 import { Button, Spinner } from "@material-tailwind/react";
 import { AuthContext } from "../../../route/AuthProvider";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { NavLink, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -18,7 +18,13 @@ const MyAdded = () => {
     console.log(loadedMyitem)
     const [updateItem, setUpdateItem] = useState(loadedMyitem);
     const {user, loading} = useContext(AuthContext);
-    if(loading) return <div className="flex justify-center my-10"><Spinner className="h-8 w-8" /></div> ;
+
+    useEffect(() => {
+      if (loadedMyitem && user?.email) {
+        const filterCard = loadedMyitem.filter((item) => item.email === user.email);
+        setUpdateItem(filterCard);
+      }
+    }, [loadedMyitem, user?.email]);
 
     const handleDeleteItem = (id) => {
         console.log(id);
@@ -54,6 +60,7 @@ const MyAdded = () => {
           });
            };
 
+           if(loading) return <div className="flex justify-center my-10"><Spinner className="h-8 w-8" /></div> ;
 
     return (
         <div className="container mx-auto">
@@ -66,7 +73,7 @@ const MyAdded = () => {
                 <h1 className="text-2xl md:text-4xl text-center my-10">{user?.displayName}s Added Items</h1>
                 <div className="grid grid-cols-1  gap-5 pl-4 md:pl-40 lg:pl-0 lg:grid-cols-3">
                     {
-                       updateItem.length && updateItem.map((user) => (
+                       updateItem.length ? updateItem.map((user) => (
                         <div key={user?._id} className="" >
                        <Card className="w-96 bg-blue-gray-100">
                       <CardHeader floated={false} className="">
@@ -94,6 +101,10 @@ const MyAdded = () => {
                     </Card>
                     </div> 
                        )) 
+                       : <>
+                       <div></div>
+                       <div className="lg:text-center pl-14 lg:pl-0">Please add a food item of your choice!!</div>
+                       </> 
                     }
                 </div>
             </div>

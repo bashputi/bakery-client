@@ -4,6 +4,7 @@ import { AuthContext } from "../../../route/AuthProvider";
 import { Spinner } from "@material-tailwind/react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { motion } from "framer-motion";
 
 
 const Update = () => {
@@ -56,12 +57,10 @@ const Update = () => {
                 <title>SL Bakery | Client update page </title>
                 <link rel="canonical" href="http://mysite.com/example" />
             </Helmet>
-            <div className="hero-content">
-    
+            <div className="hero-content">    
     <div className=" bg-base-100 shadow-2xl">
       <div></div>
-      <form onSubmit={handleUpdate} className="card-body  my-8">
-       
+      <form onSubmit={handleUpdate} className="card-body  my-8">      
      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
 <div className="form-control">
     <label className="label">
@@ -103,8 +102,7 @@ const Update = () => {
     <label className="label">
       <span className="label-text">Origin</span>
     </label>
-    <input type="text" name="origin" defaultValue={origin} placeholder="Type here" className="input input-bordered input-info w-full max-w-lg"  />
-   
+    <input type="text" name="origin" defaultValue={origin} placeholder="Type here" className="input input-bordered input-info w-full max-w-lg"  />  
   </div>
   <div className="form-control">
     <label className="label">
@@ -115,7 +113,7 @@ const Update = () => {
   </div>
   </div>
   <div className="form-control mt-6">
-    <button className="btn btn-active btn-accent ">Update Item</button>
+    <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="btn btn-active btn-accent ">Update Item</motion.button>
   </div>
  
 </form>

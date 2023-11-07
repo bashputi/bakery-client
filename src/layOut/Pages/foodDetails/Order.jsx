@@ -4,7 +4,7 @@ import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import {  Spinner } from "@material-tailwind/react";
 import { Helmet } from "react-helmet";
-
+import { motion } from "framer-motion";
 
 const Order = () => {
   const service = useLoaderData();
@@ -105,7 +105,7 @@ const handleOrder = e => {
          
         </div>
         <div className="form-control mt-6">
-        <button className="btn btn-active btn-accent ">Purchase</button>
+        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="btn btn-active btn-accent ">Purchase</motion.button>
         </div>
       </form>
     </div>

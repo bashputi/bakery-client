@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-
+import { motion } from "framer-motion";
 import { useContext } from "react";
 import { AuthContext } from "../../../route/AuthProvider";
 import Swal from "sweetalert2";
@@ -115,7 +115,7 @@ const AddFood = () => {
   </div>
   </div>
   <div className="form-control mt-6">
-    <button className="btn btn-active btn-accent ">Add your item</button>
+    <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="btn btn-active btn-accent ">Add your item</motion.button>
   </div>
  
 </form>

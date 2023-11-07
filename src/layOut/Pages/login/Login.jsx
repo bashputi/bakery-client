@@ -3,6 +3,7 @@ import { AuthContext } from "../../../route/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { Helmet } from "react-helmet";
+import { motion } from "framer-motion";
 
 
 
@@ -77,7 +78,7 @@ const Login = () => {
         </div>
         <div className="form-control mt-6">
          
-        <button className="btn btn-success">Login</button>
+        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="btn btn-success">Login</motion.button>
         </div>
       </form>
     <div className="text-center">
@@ -88,7 +89,7 @@ const Login = () => {
         success && <p className="text-green-600">{success}</p>
       }
       <div className="flex justify-center mt-5"><hr className="w-12 mt-4 "/><hr className="w-12 mt-4 "/><p className="mx-4">or</p> <hr className="w-12 mt-4"/><hr className="w-12 mt-4 "/></div>
-        <div className="flex justify-center"><button onClick={handleGoogleSignIn} className="btn btn-ghostflex gap-3 my-5"><FcGoogle/><p className="text-green-600">Continue with Google</p></button></div>
+        <div className="flex justify-center"><motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={handleGoogleSignIn} className="btn btn-ghostflex gap-3 my-5"><FcGoogle/><p className="text-green-600">Continue with Google</p></motion.button></div>
       <p className="ml-2 mb-5">New to this site? Please <Link to="/register">
                         <button className="btn btn-link">Register</button>
                         </Link></p>

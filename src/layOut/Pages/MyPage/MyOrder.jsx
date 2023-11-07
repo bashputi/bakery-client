@@ -8,7 +8,6 @@ import Swal from "sweetalert2";
 
 const MyOrder = () => {
     const loadedMyOrder = useLoaderData();
-    
     const [updateUser, setUpdateUser] = useState(loadedMyOrder);
     console.log(updateUser)
     const {user, loading} = useContext(AuthContext);
@@ -70,7 +69,7 @@ Swal.fire({
                 <h1 className="text-2xl md:text-4xl text-center my-10">{user?.displayName}s Ordered Items</h1>
                 <div className="grid grid-cols-1 gap-5 pl-4 md:pl-40 lg:pl-0 lg:grid-cols-3">
                     {
-                       updateUser.length && updateUser.map((user) => (
+                       updateUser.length ? updateUser.map((user) => (
                         <div key={user?._id} className="card w-96 bg-base-100 shadow-xl image-full">
                         <figure><img src={user?.image} alt="Shoes" /></figure>
                         <div className="card-body">
@@ -85,6 +84,10 @@ Swal.fire({
                         </div>
                       </div>
                        )) 
+                       : <>
+                       <div></div>
+                       <div className="lg:text-center lg:pl-0">Must be <span className="text-bold text-green-600 text-xl">Hungry??</span>..Why don't you order a food first......</div>
+                       </> 
                     }
                 </div>
             </div>

@@ -1,4 +1,4 @@
-
+import { motion } from "framer-motion";
 
 const Extratwo = () => {
     return (
@@ -13,7 +13,7 @@ const Extratwo = () => {
                 <img className="w-96 shadow-lg" src="https://i.ibb.co/q0QV6Gq/strawberries-and-cream-french-macarons.jpg " alt="pic of breads" />
                 <p className="my-5">Cake's are  not just a desert they are a little slice of happiness. To make your special more enjoyable we <br />
                      are here with freshly baked products.</p>
-                     <button className="btn bg-[#2e7d32] text-white">Book Us</button>
+                     <motion.button whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }} className="btn bg-[#2e7d32] text-white">Book Us</motion.button>
 
             </div>
         </div>

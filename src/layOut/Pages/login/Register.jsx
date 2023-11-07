@@ -3,6 +3,7 @@ import { useState } from "react";
 import { AuthContext } from "../../../route/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { motion } from "framer-motion";
 
 
 const Register = () => {
@@ -85,7 +86,7 @@ const Register = () => {
                         <input type="text" name="img" placeholder="Provide a image url" className="input input-bordered" required />
                         </div>
                         <div className="form-control mt-6">
-                        <button className="btn btn-success">Register</button>
+                        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="btn btn-success">Register</motion.button>
                         </div>
                     </form>
                     <div>

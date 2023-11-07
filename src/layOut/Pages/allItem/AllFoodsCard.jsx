@@ -4,8 +4,8 @@ import {
     CardBody,
     CardFooter,
     Typography,
-    Button,
   } from "@material-tailwind/react";
+  import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const AllFoodsCard = ({ bakery }) => {
@@ -36,7 +36,7 @@ const AllFoodsCard = ({ bakery }) => {
             <Typography className="font-normal">
               
            <Link to={`details/${_id}`}>
-           <Button variant="text" className="flex items-center gap-2">
+           <motion.button whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }} className="btn btn-outline btn-secondary flex items-center gap-2">
         Details{" "}
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +52,7 @@ const AllFoodsCard = ({ bakery }) => {
             d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
           />
         </svg>
-      </Button>
+      </motion.button>
            </Link>
 
             </Typography>
