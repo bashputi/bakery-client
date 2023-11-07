@@ -3,7 +3,7 @@ import { AuthContext } from "../../../route/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { Helmet } from "react-helmet";
-import { Button } from "@material-tailwind/react";
+
 
 
 const Login = () => {
@@ -77,7 +77,7 @@ const Login = () => {
         </div>
         <div className="form-control mt-6">
          
-          <Button color="blue">Login</Button>
+        <button className="btn btn-success">Login</button>
         </div>
       </form>
     <div className="text-center">

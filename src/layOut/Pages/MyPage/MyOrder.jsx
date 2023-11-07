@@ -1,26 +1,26 @@
 import { Spinner } from "@material-tailwind/react";
 import { AuthContext } from "../../../route/AuthProvider";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
 const MyOrder = () => {
-    // const params = useParams();
-    // console.log(params)
     const loadedMyOrder = useLoaderData();
-    console.log(loadedMyOrder)
-    const [updateUser, setUpdateUser] = useState(loadedMyOrder);
-    const {user, loading} = useContext(AuthContext);
-
-    // useEffect(() => {
-    //     const filterCart = loadedMyOrder.filter((item) => item.email === params.email);
-    //     setUpdateUser(filterCart);
-    // },[params.email, loadedMyOrder])
-
     
-    if(loading) return <div className="flex justify-center my-10"><Spinner className="h-8 w-8" /></div> ;
+    const [updateUser, setUpdateUser] = useState(loadedMyOrder);
+    console.log(updateUser)
+    const {user, loading} = useContext(AuthContext);
+console.log(user?.email)
+
+
+useEffect(() => {
+  if (loadedMyOrder && user?.email) {
+    const filterCard = loadedMyOrder.filter((item) => item.email === user.email);
+    setUpdateUser(filterCard);
+  }
+}, [loadedMyOrder, user?.email]);
 
    const handleDelete = (id) => {
 console.log(id);
@@ -56,17 +56,18 @@ Swal.fire({
   });
    };
 
+  if(loading) return <div className="flex justify-center my-10"><Spinner className="h-8 w-8" /></div> ;
 
     return (
         <div className="container mx-auto">
               <Helmet>
                 <meta charSet="utf-8" />
-                <title>SL Bakery | Client's order </title>
+                <title>SL Bakery | Client order </title>
                 <link rel="canonical" href="http://mysite.com/example" />
             </Helmet>
             
             <div className="">
-                <h1 className="text-2xl md:text-4xl text-center my-10">{user?.displayName}'s Ordered Items</h1>
+                <h1 className="text-2xl md:text-4xl text-center my-10">{user?.displayName}s Ordered Items</h1>
                 <div className="grid grid-cols-1 gap-5 pl-4 md:pl-40 lg:pl-0 lg:grid-cols-3">
                     {
                        updateUser.length && updateUser.map((user) => (

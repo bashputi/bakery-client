@@ -63,7 +63,7 @@ const MyAdded = () => {
                 <link rel="canonical" href="http://mysite.com/example" />
             </Helmet>
             <div className="">
-                <h1 className="text-2xl md:text-4xl text-center my-10">{user?.displayName}'s Added Items</h1>
+                <h1 className="text-2xl md:text-4xl text-center my-10">{user?.displayName}s Added Items</h1>
                 <div className="grid grid-cols-1  gap-5 pl-4 md:pl-40 lg:pl-0 lg:grid-cols-3">
                     {
                        updateItem.length && updateItem.map((user) => (

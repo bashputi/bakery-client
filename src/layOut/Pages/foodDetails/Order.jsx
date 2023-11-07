@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../../route/AuthProvider";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
-import { Button, Spinner } from "@material-tailwind/react";
+import {  Spinner } from "@material-tailwind/react";
 import { Helmet } from "react-helmet";
 
 
@@ -32,7 +32,7 @@ const handleOrder = e => {
     image,
     Date: date
   }
- 
+
   fetch('http://localhost:5000/order', {
     method: 'POST',
     headers: {
@@ -42,7 +42,6 @@ const handleOrder = e => {
   })
   .then(res => res.json())
   .then(data => {
-    console.log(data);
     if(data.insertedId){
       Swal.fire({
         title: "Good job!",
@@ -106,7 +105,7 @@ const handleOrder = e => {
          
         </div>
         <div className="form-control mt-6">
-        <Button color="green" className="py-4 text-sm">Purchase</Button>
+        <button className="btn btn-active btn-accent ">Purchase</button>
         </div>
       </form>
     </div>
