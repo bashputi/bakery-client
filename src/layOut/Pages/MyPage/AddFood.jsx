@@ -2,11 +2,12 @@ import { Helmet } from "react-helmet";
 
 import { useContext } from "react";
 import { AuthContext } from "../../../route/AuthProvider";
-import { CardHeader } from "@material-tailwind/react";
 import Swal from "sweetalert2";
+import { Spinner } from "@material-tailwind/react";
 
 const AddFood = () => {
-    const {user} = useContext(AuthContext);
+    const {user,loading} = useContext(AuthContext);
+    if(loading) return <div className="flex justify-center my-10"><Spinner className="h-8 w-8" /></div> ;
     const handleAdd = e => {
         e.preventDefault();
         const foodName = e.target.foodName.value;
@@ -17,8 +18,7 @@ const AddFood = () => {
         const email = e.target.email.value;
         const origin = e.target.origin.value;
         const recipie = e.target.recipie.value;
-        console.log(recipie, origin,
-            email,name ,price, quantity,pic,foodName);
+       
             const adding = {
               foodname: foodName,
               img: pic,
@@ -92,7 +92,7 @@ const AddFood = () => {
     <label className="label">
       <span className="label-text">Buyer Name</span>
     </label>
-    <input type="text" defaultValue={user?.displayName} name="name" placeholder="Type here" className="input input-bordered input-info w-full max-w-lg" required readOnly={true}/>
+    <input type="text" defaultValue={user?.displayName} name="name"  placeholder="Type here" className="input input-bordered input-info w-full max-w-lg" required readOnly={true}/>
   </div>
   <div className="form-control">
     <label className="label">

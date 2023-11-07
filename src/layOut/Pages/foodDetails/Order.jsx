@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../../route/AuthProvider";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
-import { Spinner } from "@material-tailwind/react";
+import { Button, Spinner } from "@material-tailwind/react";
 import { Helmet } from "react-helmet";
 
 
@@ -106,7 +106,7 @@ const handleOrder = e => {
          
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Purchase</button>
+        <Button color="green" className="py-4 text-sm">Purchase</Button>
         </div>
       </form>
     </div>

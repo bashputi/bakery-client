@@ -12,14 +12,14 @@ const MyOrder = () => {
     const loadedMyOrder = useLoaderData();
     console.log(loadedMyOrder)
     const [updateUser, setUpdateUser] = useState(loadedMyOrder);
-    const {user} = useContext(AuthContext);
+    const {user, loading} = useContext(AuthContext);
 
     // useEffect(() => {
     //     const filterCart = loadedMyOrder.filter((item) => item.email === params.email);
     //     setUpdateUser(filterCart);
     // },[params.email, loadedMyOrder])
 
-    const {loading} = useContext(AuthContext);
+    
     if(loading) return <div className="flex justify-center my-10"><Spinner className="h-8 w-8" /></div> ;
 
    const handleDelete = (id) => {
