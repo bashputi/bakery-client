@@ -1,28 +1,37 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import AllFoodsCard from "./AllFoodsCard";
 import { Helmet } from "react-helmet";
 import { Spinner } from "@material-tailwind/react";
 import { AuthContext } from "../../../route/AuthProvider";
-// import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+
 
 const AllFoods = () => {
     const loadedFoods = useLoaderData();
-    const { loading} = useContext(AuthContext);
-    // const { count } = useLoaderData();
-    // console.log(count)
+    const { loading} = useContext(AuthContext); 
     const [bakerys, setBakerys] = useState(loadedFoods);
-    const [originalBakers] = useState(loadedFoods);
+    const count = loadedFoods.length ;
+    const itemsPerPage = 9 ;
+    const numberOfPage = Math.ceil( count / itemsPerPage);
+    const pages = [...Array(numberOfPage).keys()];
+    const [currentPage, setCurrentPage] = useState(0);
+
+    useEffect(() => {
+        fetch(`https://bakery-server-2uyebxf6v-rimeislam672-gmailcom.vercel.app/bakery?page=${currentPage}&size=${itemsPerPage}`)
+            .then(res => res.json())
+            .then(data => setBakerys(data))
+    }, [currentPage]);
  
     if(loading) return <div className="flex justify-center my-10"><Spinner className="h-8 w-8" /></div> ;
  const handleSarch = (e) => {
     e.preventDefault();
     const food = e.target.food.value;
     if ( food === "All") {
-        setBakerys(originalBakers);
+        const remaining = loadedFoods.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage);
+          setBakerys(remaining);
     } else {
-        const remaining = originalBakers?.filter((item) => item.category === food);
-    setBakerys(remaining)
+        const remaining = loadedFoods?.filter((item) => item.category === food);
+    setBakerys(remaining.slice(0, itemsPerPage));
     }
  };
    
@@ -51,19 +60,21 @@ const AllFoods = () => {
             </div>
             </div>
             </form>
+            
           </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pl-5 md:pl-0 lg:grid-cols-3">
                 {
                   bakerys.length &&  bakerys.map((bakery)=> <AllFoodsCard key={bakery._id} bakery={bakery} bakerys={bakerys} setBakerys={setBakerys}></AllFoodsCard>)
                 }
             </div>
-           <div className="flex justify-center mt-12">
-           <div className="join">
-            <button className="join-item btn">«</button>
-            <button className="join-item btn">Page 22</button>
-            <button className="join-item btn">»</button>
-            </div>
-           </div>
+            <div className="flex justify-center mt-16">
+             <div className="grid grid-cols-3 gap-6">
+                  
+               {
+                 pages.map(page => <button className={currentPage === page ? "btn btn-warning" : undefined} onClick={() => setCurrentPage(page)} key={page}>{page} </button>)
+            }
+             </div>
+                </div>
         </div>
     );
 };

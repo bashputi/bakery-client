@@ -39,27 +39,27 @@ const myRouter = createBrowserRouter([
         {
           path: '/allfoods',
           element: <AllFoods></AllFoods>,
-           loader: () => fetch('http://localhost:5000/bakery')
+           loader: () => fetch('https://bakery-server-2uyebxf6v-rimeislam672-gmailcom.vercel.app/bakery')
         },
         {
           path:'/allfoods/details/:id',
           element: <Details></Details>,
-          loader: ({params}) => fetch(`http://localhost:5000/bakery/${params.id}`)
+          loader: ({params}) => fetch(`https://bakery-server-2uyebxf6v-rimeislam672-gmailcom.vercel.app/bakery/${params.id}`)
         },
         {
           path: 'order/:id',
           element: <PrivateRoute><Order></Order></PrivateRoute>,
-           loader: ({params}) => fetch(`http://localhost:5000/bakery/${params.id}`)
+           loader: ({params}) => fetch(`https://bakery-server-2uyebxf6v-rimeislam672-gmailcom.vercel.app/bakery/${params.id}`),
         },
         {
           path: '/myorder',
           element: <MyOrder></MyOrder>,
-          loader: () => fetch('http://localhost:5000/order')
+          loader: () => fetch('https://bakery-server-2uyebxf6v-rimeislam672-gmailcom.vercel.app/order')
         },
         {
           path: '/addeditems',
           element: <MyAdded></MyAdded>,
-          loader: () => fetch('http://localhost:5000/item')
+          loader: () => fetch('https://bakery-server-2uyebxf6v-rimeislam672-gmailcom.vercel.app/item')
         },
         {
           path: '/addfood',
@@ -68,7 +68,7 @@ const myRouter = createBrowserRouter([
         {
           path: '/addeditems/update/:id',
           element: <Update></Update>,
-          loader: ({params}) => fetch(`http://localhost:5000/item/${params.id}`)
+          loader: ({params}) => fetch(`https://bakery-server-2uyebxf6v-rimeislam672-gmailcom.vercel.app/item/${params.id}`)
         }
       ]
     },
