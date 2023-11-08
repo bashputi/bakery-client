@@ -1,9 +1,11 @@
-import { Carousel, Typography, Button } from "@material-tailwind/react";
+import { Carousel, Typography } from "@material-tailwind/react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Banner = () => {
     return (
+      <div  data-aos="fade-up"
+      data-aos-duration="2500">
         <Carousel className="rounded-xl">
           <div className="relative h-full w-full">
             <img
@@ -93,6 +95,7 @@ const Banner = () => {
             </div>
           </div>
         </Carousel>
+        </div>
       );
     };
 export default Banner;

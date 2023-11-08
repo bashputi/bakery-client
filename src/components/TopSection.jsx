@@ -11,7 +11,7 @@ const TopSection = () => {
     if(loading) return <div className="flex justify-center my-10"><Spinner className="h-8 w-8" /></div> ;
     return (
         <div className="my-20">
-            <div className="text-center text-amber-600 font-bold text-3xl lg:text-5xl">Our Top Rated Products</div>
+            <div data-aos="zoom-in" data-aos-duration="3000" className="text-center text-amber-700 font-bold text-3xl lg:text-5xl">Our Top Rated Products</div>
             <div className="my-12">
 
             </div>

@@ -69,12 +69,12 @@ const MyAdded = () => {
                 <title>SL Bakery | Client added items </title>
                 <link rel="canonical" href="http://mysite.com/example" />
             </Helmet>
-            <div className="">
+            <div >
                 <h1 className="text-2xl md:text-4xl text-center my-10">{user?.displayName}s Added Items</h1>
                 <div className="grid grid-cols-1  gap-5 pl-4 md:pl-40 lg:pl-0 lg:grid-cols-3">
                     {
                        updateItem.length ? updateItem.map((user) => (
-                        <div key={user?._id} className="" >
+                        <div data-aos="zoom-in-down" data-aos-duration="2500" key={user?._id} className="" >
                        <Card className="w-96 bg-blue-gray-100">
                       <CardHeader floated={false} className="">
                         <img className="w-96 h-80" src={user?.img} alt="profile-picture" />

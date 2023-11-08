@@ -49,7 +49,8 @@ const AddFood = () => {
   })
     }
     return (
-        <div className="container mx-auto pb-10 bg-blue-gray-100 mt-10 py-5">
+        <div
+         className="container mx-auto pb-10 bg-blue-gray-100 mt-10 py-5">
               <Helmet>
                 <meta charSet="utf-8" />
                 <title>SL Bakery | Add a item </title>
@@ -57,7 +58,7 @@ const AddFood = () => {
             </Helmet>
             <h1 className="text-center my-10 font-bold text-3xl">Add Your Own Items</h1>
             <div className="">
-  <div className="hero-content">
+  <div data-aos="zoom-in" data-aos-duration="2000" className="hero-content">
     
     <div className=" bg-base-100 shadow-2xl">
       <form onSubmit={handleAdd} className="card-body  my-8">

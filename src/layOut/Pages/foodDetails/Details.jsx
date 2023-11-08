@@ -23,10 +23,10 @@ const Details = () => {
     <h1 className="mt-12 mb-4 font-extrabold text-center text-5xl">Shop</h1>
     <p className="mb-12 md:mb-20 text-center text-gray-600 ">Product Details</p>
           <div className="card h-[60vh] grid md:grid-cols-2 card-side bg-base-900">
-            <div>
+            <div data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
             <figure><img className="h-[60vh]" src={image} alt="Movie"/></figure>
             </div>
-            <div className="card-body md:-mt-8">
+            <div data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-duration="2000" className="card-body md:-mt-8">
                 <h2 className="card-title text-3xl">{name}</h2>
                 <p className="text-gray-600">{category}</p>
                 <p className="lg:-mb-10">Made by Chef {made}</p>

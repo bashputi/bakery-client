@@ -11,6 +11,8 @@ import { Link } from "react-router-dom";
 const AllFoodsCard = ({ bakery }) => {
     const {_id, name, image, category, quantity, price} = bakery || {};
     return (
+      <div data-aos="fade-up"
+      data-aos-duration="2600">
         <Card className="max-w-[24rem] overflow-hidden">
           <CardHeader
             floated={false}
@@ -58,6 +60,7 @@ const AllFoodsCard = ({ bakery }) => {
             </Typography>
           </CardFooter>
         </Card>
+        </div>
       );
 };
 

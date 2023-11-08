@@ -33,7 +33,7 @@ const AllFoods = () => {
                 <title>SL Bakery | All food items </title>
                 <link rel="canonical" href="http://mysite.com/example" />
             </Helmet>
-            <div className="text-center mt-12 mb-8 text-amber-600 font-bold text-3xl lg:text-5xl">All Food Items</div>
+            <div data-aos="zoom-in" data-aos-duration="2000" className="text-center mt-12 mb-8 text-amber-600 font-bold text-3xl lg:text-5xl">All Food Items</div>
             <div className="mb-12 flex justify-center">
             <form onSubmit={handleSarch}>
             <div className="form-control">

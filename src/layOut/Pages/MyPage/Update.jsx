@@ -57,11 +57,12 @@ const Update = () => {
                 <title>SL Bakery | Client update page </title>
                 <link rel="canonical" href="http://mysite.com/example" />
             </Helmet>
+            <div className="text-center mt-12 mb-5 text-3xl font-semibold">Update Your Items Info</div>
             <div className="hero-content">    
     <div className=" bg-base-100 shadow-2xl">
       <div></div>
       <form onSubmit={handleUpdate} className="card-body  my-8">      
-     <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+     <div data-aos="zoom-in-up" data-aos-duration="2000" className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
 <div className="form-control">
     <label className="label">
       <span className="label-text">Food Name</span>

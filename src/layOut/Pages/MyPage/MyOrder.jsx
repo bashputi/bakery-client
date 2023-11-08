@@ -70,7 +70,9 @@ Swal.fire({
                 <div className="grid grid-cols-1 gap-5 pl-4 md:pl-40 lg:pl-0 lg:grid-cols-3">
                     {
                        updateUser.length ? updateUser.map((user) => (
-                        <div key={user?._id} className="card w-96 bg-base-100 shadow-xl image-full">
+                        <div  data-aos="flip-left"
+                        data-aos-easing="ease-out-cubic"
+                        data-aos-duration="2000" key={user?._id} className="card w-96 bg-base-100 shadow-xl image-full">
                         <figure><img src={user?.image} alt="Shoes" /></figure>
                         <div className="card-body">
                           <h2 className="card-title">{user?.foodname}</h2>

@@ -12,7 +12,7 @@ const Blog = () => {
  
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
     return (
-        <div className="container mx-auto">
+        <div data-aos="zoom-out-up" data-aos-duration="2500"  className="container mx-auto">
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>SL Bakery | Blog </title>

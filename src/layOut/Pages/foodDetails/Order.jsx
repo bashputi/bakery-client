@@ -61,7 +61,7 @@ const handleOrder = e => {
                 <link rel="canonical" href="http://mysite.com/example" />
             </Helmet>
           <div className="mt-10 text-center font-bold text-4xl">Buy Now</div>
-            <div className="hero min-h-screen">
+            <div data-aos="zoom-in-up" data-aos-duration="2500" className="hero min-h-screen">
   <div className="hero-content ">
    
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
