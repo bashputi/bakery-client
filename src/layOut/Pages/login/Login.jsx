@@ -1,9 +1,10 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../route/AuthProvider";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
+import axios from "axios";
 
 
 
@@ -11,6 +12,7 @@ const Login = () => {
 
   const [logInError, setLogInError] = useState('');
   const [success, setSuccess] = useState('');
+  const location = useLocation()
   const { signIn, googleSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -21,31 +23,32 @@ const Login = () => {
 
     setLogInError('');
     setSuccess('');
-
     signIn(email, password)
-    .then(res => {
-      console.log(res);
-      setSuccess('User Logged in Successfully!!')
+    .then(result => {
+      console.log(result)
+      setSuccess('User Logged in Successfully.')
       e.target.reset();
-      navigate('/');
-    })
-    .catch(error => {
-      setLogInError(error.message);
-    })
-
-  };
+      navigate(location?.state ? location.state : '/');
+  })
+  .catch(error => {
+      console.error(error)
+     setLogInError(error.message);
+  })
+};
 
   const handleGoogleSignIn = () => {
+        
     googleSignIn()
     .then(result => {
         console.log(result.user);
         setSuccess('User Logged in Successfully');
-        navigate('/');
+        navigate(location?.state ? location.state : '/');
     })
     .catch(error => {
         setLogInError(error.message);
     })
-  };
+   
+};
 
 
   return (

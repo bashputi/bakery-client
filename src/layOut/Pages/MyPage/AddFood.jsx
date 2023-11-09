@@ -30,7 +30,7 @@ const AddFood = () => {
               recipie: recipie
               
             }
-            fetch('https://bakery-server-2uyebxf6v-rimeislam672-gmailcom.vercel.app/item', {
+            fetch('https://bakery-server-psi.vercel.app/item', {
     method: 'POST',
     headers: {
       'content-type': 'application/json'

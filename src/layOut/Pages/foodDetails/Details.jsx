@@ -10,6 +10,7 @@ const Details = () => {
     
     const {_id, name, image, category, quantity, price, made, origin, description } = details || {};
 
+    
     const {loading} = useContext(AuthContext);
     if(loading) return <div className="flex justify-center my-10"><Spinner className="h-8 w-8" /></div> ;
    

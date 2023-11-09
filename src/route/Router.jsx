@@ -39,36 +39,36 @@ const myRouter = createBrowserRouter([
         {
           path: '/allfoods',
           element: <AllFoods></AllFoods>,
-           loader: () => fetch('https://bakery-server-2uyebxf6v-rimeislam672-gmailcom.vercel.app/bakery')
+           loader: () => fetch('https://bakery-server-psi.vercel.app/bakery')
         },
         {
           path:'/allfoods/details/:id',
           element: <Details></Details>,
-          loader: ({params}) => fetch(`https://bakery-server-2uyebxf6v-rimeislam672-gmailcom.vercel.app/bakery/${params.id}`)
+          loader: ({params}) => fetch(`https://bakery-server-psi.vercel.app/bakery/${params.id}`)
         },
         {
           path: 'order/:id',
           element: <PrivateRoute><Order></Order></PrivateRoute>,
-           loader: ({params}) => fetch(`https://bakery-server-2uyebxf6v-rimeislam672-gmailcom.vercel.app/bakery/${params.id}`),
+           loader: ({params}) => fetch(`https://bakery-server-psi.vercel.app/bakery/${params.id}`),
         },
         {
           path: '/myorder',
-          element: <MyOrder></MyOrder>,
-          loader: () => fetch('https://bakery-server-2uyebxf6v-rimeislam672-gmailcom.vercel.app/order')
+          element: <PrivateRoute><MyOrder></MyOrder></PrivateRoute>,
+          loader: () => fetch('https://bakery-server-psi.vercel.app/order')
         },
         {
           path: '/addeditems',
-          element: <MyAdded></MyAdded>,
-          loader: () => fetch('https://bakery-server-2uyebxf6v-rimeislam672-gmailcom.vercel.app/item')
+          element: <PrivateRoute><MyAdded></MyAdded></PrivateRoute>,
+          loader: () => fetch('https://bakery-server-psi.vercel.app/item')
         },
         {
           path: '/addfood',
-          element: <AddFood></AddFood>
+          element: <PrivateRoute><AddFood></AddFood></PrivateRoute>
         },
         {
           path: '/addeditems/update/:id',
-          element: <Update></Update>,
-          loader: ({params}) => fetch(`https://bakery-server-2uyebxf6v-rimeislam672-gmailcom.vercel.app/item/${params.id}`)
+          element: <PrivateRoute><Update></Update></PrivateRoute>,
+          loader: ({params}) => fetch(`https://bakery-server-psi.vercel.app/item/${params.id}`)
         }
       ]
     },
