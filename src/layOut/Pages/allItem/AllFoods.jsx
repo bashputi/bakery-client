@@ -17,7 +17,7 @@ const AllFoods = () => {
     const [currentPage, setCurrentPage] = useState(0);
 
     useEffect(() => {
-        fetch(`https://bakery-server-psi.vercel.app/bakery?page=${currentPage}&size=${itemsPerPage}`)
+        fetch(`http://localhost:5000/bakery?page=${currentPage}&size=${itemsPerPage}`)
             .then(res => res.json())
             .then(data => setBakerys(data))
     }, [currentPage]);

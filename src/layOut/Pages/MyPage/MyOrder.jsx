@@ -34,7 +34,7 @@ Swal.fire({
   }).then((result) => {
     console.log(result)
     if (result.isConfirmed) {
-        fetch(`https://bakery-server-psi.vercel.app/order/${id}`,{
+        fetch(`http://localhost:5000/order/${id}`,{
             method: 'DELETE'
         })
         .then(res => res.json())

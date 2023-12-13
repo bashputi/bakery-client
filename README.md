@@ -7,7 +7,7 @@
 - SL Bakery
 
 # Server site live link
-- https://bakery-server-psi.vercel.app
+- http://localhost:5000
 
 - https://bakery-server-2uyebxf6v-rimeislam672-gmailcom.vercel.app
 

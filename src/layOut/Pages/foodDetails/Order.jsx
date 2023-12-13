@@ -33,7 +33,7 @@ const handleOrder = e => {
     Date: date
   }
 
-  fetch('https://bakery-server-psi.vercel.app/order', {
+  fetch('http://localhost:5000/order', {
     method: 'POST',
     headers: {
       'content-type': 'application/json'

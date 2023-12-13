@@ -39,27 +39,27 @@ const myRouter = createBrowserRouter([
         {
           path: '/allfoods',
           element: <AllFoods></AllFoods>,
-           loader: () => fetch('https://bakery-server-psi.vercel.app/bakery')
+           loader: () => fetch('http://localhost:5000/bakery')
         },
         {
           path:'/allfoods/details/:id',
           element: <Details></Details>,
-          loader: ({params}) => fetch(`https://bakery-server-psi.vercel.app/bakery/${params.id}`)
+          loader: ({params}) => fetch(`http://localhost:5000/bakery/${params.id}`)
         },
         {
           path: 'order/:id',
           element: <PrivateRoute><Order></Order></PrivateRoute>,
-           loader: ({params}) => fetch(`https://bakery-server-psi.vercel.app/bakery/${params.id}`),
+           loader: ({params}) => fetch(`http://localhost:5000/bakery/${params.id}`),
         },
         {
           path: '/myorder',
           element: <PrivateRoute><MyOrder></MyOrder></PrivateRoute>,
-          loader: () => fetch('https://bakery-server-psi.vercel.app/order')
+          loader: () => fetch('http://localhost:5000/order')
         },
         {
           path: '/addeditems',
           element: <PrivateRoute><MyAdded></MyAdded></PrivateRoute>,
-          loader: () => fetch('https://bakery-server-psi.vercel.app/item')
+          loader: () => fetch('http://localhost:5000/item')
         },
         {
           path: '/addfood',
@@ -68,7 +68,7 @@ const myRouter = createBrowserRouter([
         {
           path: '/addeditems/update/:id',
           element: <PrivateRoute><Update></Update></PrivateRoute>,
-          loader: ({params}) => fetch(`https://bakery-server-psi.vercel.app/item/${params.id}`)
+          loader: ({params}) => fetch(`http://localhost:5000/item/${params.id}`)
         }
       ]
     },

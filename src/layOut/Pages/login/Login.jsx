@@ -4,7 +4,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
-import axios from "axios";
 
 
 

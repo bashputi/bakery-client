@@ -11,7 +11,7 @@ const TopSection = () => {
     const [foods, setFoods] = useState([]);
 console.log(foods)
     useEffect(() => {
-      fetch('https://bakery-server-psi.vercel.app/order')
+      fetch('http://localhost:5000/order')
         .then((res) => res.json())
         .then(data => setFoods(data.slice(0, 6)))
     }, [setFoods]);
