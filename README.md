@@ -1,15 +1,16 @@
-# Client site live link
-
-- https://bakery-client-2384d.web.app
-
 # My Project Name
 
 - SL Bakery
 
+<<<<<<< HEAD
 # Server site live link
 - http://localhost:5000
+=======
+# Client site live link
 
-- https://bakery-server-2uyebxf6v-rimeislam672-gmailcom.vercel.app
+- https://bakery-client-2384d.web.app
+>>>>>>> 9fc89c7cea81326a74f3b14811cf6a6b632ba078
+
 
 # Feature of my project
 
