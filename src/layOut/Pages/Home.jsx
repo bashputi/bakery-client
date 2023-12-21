@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import TopSection from "../../components/TopSection";
 import Extraone from "../../components/Extra/Extraone";
 import Extratwo from "../../components/Extra/Extratwo";
+import API from "../../components/API";
 
 
 
@@ -16,7 +17,10 @@ const Home = () => {
                 <link rel="canonical" href="http://mysite.com/example" />
             </Helmet>
         
-      <Banner></Banner> 
+      {/* <Banner></Banner>  */}
+      <div>
+        <API></API>
+      </div>
        <Extraone></Extraone>
       <TopSection></TopSection>
       <Extratwo></Extratwo>

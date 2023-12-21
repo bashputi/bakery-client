@@ -4,7 +4,7 @@
 
 <<<<<<< HEAD
 # Server site live link
-- http://localhost:5000
+- https://bakery-server-psi.vercel.app
 =======
 # Client site live link
 

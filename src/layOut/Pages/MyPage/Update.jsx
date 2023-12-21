@@ -30,7 +30,7 @@ const Update = () => {
         foodName, pic, quantity, price, name, email, origin, recipie
       };
      
-      fetch(`http://localhost:5000/item/${_id}`, {
+      fetch(`https://bakery-server-psi.vercel.app/item/${_id}`, {
         method: 'PUT',
         headers: {
           'content-type': 'application/json'

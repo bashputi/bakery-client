@@ -1,5 +1,5 @@
 import { FcInTransit,FcGlobe, FcFaq } from "react-icons/fc";
-
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 
 const Extraone = () => {
@@ -27,6 +27,13 @@ const Extraone = () => {
             <div className="mt-12">
             <hr /><hr />
             </div>
+            <div>
+            <MessengerCustomerChat
+                pageId="<100016493281782>"
+                appId="<322813700703150>"
+
+            />,
+                        </div>
         </div>
     );
 };
