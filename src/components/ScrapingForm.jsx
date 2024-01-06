@@ -43,28 +43,28 @@ function ScrapingForm() {
   .catch(err => console.error(err));
 
 
-    // try {
-    //   const response = await fetch(url, options);
-    //   console.log(response)
+    try {
+      const response = await fetch(url, options);
+      console.log(response)
 
-    //   if (response.ok) {
-    //     const options = {method: 'GET', headers: {accept: 'application/json'}};
+      if (response.ok) {
+        const options = {method: 'GET', headers: {accept: 'application/json'}};
 
-    //     fetch(getDataUrl, options)
-    //       .then(response => response.json())
-    //       .then(response => console.log(response))
-    //       .catch(err => console.error(err));
-    //   } else {
-    //     console.error('Request failed with status:', response.status);
-    //   }
-
-
+        fetch(getDataUrl, options)
+          .then(response => response.json())
+          .then(response => console.log(response))
+          .catch(err => console.error(err));
+      } else {
+        console.error('Request failed with status:', response.status);
+      }
 
 
-    //   // Rest of your code remains the same
-    // } catch (error) {
-    //   console.error('Error fetching data:', error);
-    // }
+
+
+      // Rest of your code remains the same
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
   };
 
   return (
